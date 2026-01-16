@@ -70,8 +70,6 @@ src/
     CanLogin.php        # Example trait for login logic
   Interfaces/
     Resettable.php      # Example interface for password reset
-tests/
-  Demo.php              # Simple demo/test script
 .gitignore              # Ignore dependencies, environment, system files
 composer.json           # Composer autoload configuration
 demo.php                # Demo script to showcase functionality
