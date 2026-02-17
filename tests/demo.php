@@ -8,9 +8,6 @@ use App\AdminUser;
 use App\CustomerUser;
 use App\UserBase;
 
-/**
- * Regular function requirement: format output lines.
- */
 function printLine(string $label, mixed $value): void
 {
     echo $label . ': ' . (is_string($value) ? $value : var_export($value, true)) . PHP_EOL;
@@ -19,8 +16,6 @@ function printLine(string $label, mixed $value): void
 echo "=== DEMO START ===" . PHP_EOL;
 
 try {
-    // Optional superglobal simulation:
-    // Example: php tests/Demo.php "name=Vidya&email=vidya@example.com"
     parse_str($argv[1] ?? '', $_GET);
 
     $nameFromGet = $_GET['name'] ?? 'Default User';
@@ -29,11 +24,9 @@ try {
     $admin = new AdminUser('Alice Admin', 'alice.admin@example.com');
     $customer = new CustomerUser($nameFromGet, $emailFromGet, 10);
 
-    // Magic __set / __get demo
     $customer->favoriteColor = 'blue';
     printLine('Customer favoriteColor (magic __get)', $customer->favoriteColor);
 
-    // Numeric array: ordered list (best for loops + map/filter)
     $usersNumeric = [$admin, $customer];
 
     // Associative array: key-value lookup (best for fast access by key)
@@ -99,6 +92,8 @@ try {
         $badUser = new CustomerUser('Bad Email', 'not-an-email');
         printLine('Bad user', (string) $badUser);
     } catch (\InvalidArgumentException $e) {
+        printLine('Caught exception (invalid email)', $e->getMessage());
+    }
 
     // Interface method demo
     $admin->resetPassword('new-secure-password');
