@@ -1,7 +1,11 @@
 {
+  "name": "bharath/user-role-demo",
+  "description": "Simple user and role management demo",
+  "type": "project",
   "autoload": {
     "psr-4": {
       "App\\": "src/"
     }
-  }
+  },
+  "require": {}
 }
