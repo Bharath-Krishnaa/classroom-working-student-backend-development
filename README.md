@@ -46,9 +46,11 @@ README.md
 
 ```bash
 composer install
+```
 2. Run the demo script:
+```
 php tests/demo.php
-
+```
 ## Output
 The demo prints example users, array operations, login status, exception handling, and basic assertions.
 
