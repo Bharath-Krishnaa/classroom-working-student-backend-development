@@ -21,10 +21,10 @@ try {
     $nameFromGet = $_GET['name'] ?? 'Default User';
     $emailFromGet = $_GET['email'] ?? 'default@example.com';
 
-    $admin = new AdminUser('Alice Admin', 'alice.admin@example.com');
+    $admin = new AdminUser('Bharath Admin', 'Bharath.admin@example.com');
     $customer = new CustomerUser($nameFromGet, $emailFromGet, 10);
 
-    $customer->favoriteColor = 'blue';
+    $customer->favoriteColor = 'red';
     printLine('Customer favoriteColor (magic __get)', $customer->favoriteColor);
 
     $usersNumeric = [$admin, $customer];
